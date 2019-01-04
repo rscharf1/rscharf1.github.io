@@ -1,0 +1,164 @@
+body {
+    background-color: #ff3c4b; 
+    overflow-y: visible; 
+    overflow-x: hidden; 
+}
+
+.navbar-brand img {
+    width: 25%; 
+    position: relative;
+    bottom: 12px; 
+}
+
+.navbar-brand {
+    vertical-align: middle; 
+}
+
+.navbar-brand {
+    vertical-align: middle; 
+    display: inline-block; 
+    margin-right: -200px; 
+}
+
+.navbar-brand img:first-of-type {
+    width: 40px; 
+    height: 40px;
+}
+
+nav {
+    position: fixed;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.name {
+    position: relative;
+    bottom: 8px; 
+    font-weight: 100px !important; 
+    font-size: 30px;
+    font-family: Ubuntu;
+}
+/* ------- */
+
+#headshot {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    margin-top: 5%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    overflow: hidden;
+}
+
+#headshot img {
+    height: 120%; 
+}
+
+ul #headshot {
+    width: 90px; 
+    height: 90px; 
+    border-radius: 50%; 
+    margin-top: 5%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    overflow: hidden;
+    border: 1px solid black;
+    
+}
+
+ul #headshot img {
+    height: 80%; 
+    overflow: visible; 
+    height:100px; 
+    width: 100px;
+}
+
+.footer {
+    background-color: #fafafa; 
+    width: 100%;
+    text-align: left; 
+}
+
+.footer .row {
+    color: gray; 
+    margin-left: 5%; 
+    vertical-align: middle;
+    line-height: 50px; 
+}
+
+.footer label {
+    font-size: 12px; 
+}
+
+.footer a .btn {
+    color: black; 
+}
+
+/* ---------------------------------------- */
+.kramer .col-sm-6, .gallagher .col-sm-6, .quigley .col-sm-6 {
+    background-color: #fafafa; 
+}
+
+.crawford .col-sm-6, .madden .col-sm-6, .interns .col-sm-6 {
+    background-color: #e8e6e6; 
+}
+
+.container-fluid .row .col-sm-6:last-of-type p {
+    margin-top: auto; 
+    margin-bottom: auto; 
+    vertical-align: middle; 
+}
+
+@media screen and ( min-width: 500px) {
+    .container-fluid .row {
+    display: flex; 
+    }
+
+    .container-fluid .row .col-sm-6:last-of-type p {
+        margin-top: 10%; 
+    }
+
+    .container-fluid {
+        width: 85%; 
+    }
+}
+
+@media screen and ( max-width: 500px) {
+    .container-fluid {
+        width: 100%; 
+    }
+
+    .container-fluid .row .col-sm-6:last-of-type {
+        margin-top: -10px; 
+    }
+
+    .container-fluid .row .col-sm-6:first-of-type {
+        margin-top: -22px ;
+    }
+
+    .interns {
+        margin-top: 5px; 
+    }
+
+    .container-fluid .row .col-sm-6:last-of-type p {
+        padding: 5px 5px; 
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .interns #headshot {
+        height: 60px;
+        width: 60px; 
+    }
+
+    .interns #headshot img {
+        height:60px; 
+        width: 60px;
+    }
+
+    .interns li {
+        font-size: 8px; 
+    }
+}

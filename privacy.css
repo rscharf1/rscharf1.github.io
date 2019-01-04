@@ -1,0 +1,60 @@
+body {
+    background-color: #ff3c4b; 
+}
+
+.navbar-brand img {
+    width: 25%; 
+    position: relative;
+    bottom: 12px; 
+}
+
+.navbar-brand {
+    vertical-align: middle; 
+    display: inline-block; 
+    margin-right: -200px; 
+}
+
+.navbar-brand img:first-of-type {
+    width: 40px; 
+    height: 40px;
+}
+
+nav {
+    position: fixed;
+}
+
+.navbar {
+    margin-bottom: 0; 
+}
+
+/* --------- */
+.container.policy {
+    width: 85%; 
+    background-color: #fafafa; 
+}
+
+.page-header {
+    font-size: 20px; 
+}
+
+p {
+    width: 85%; 
+}
+
+p, h5 {
+    margin-left: 5%; 
+}
+
+h5 {
+    text-decoration: underline; 
+}
+
+@media screen and ( max-width: 500px) {
+    .container.policy {
+        width: 100%; 
+    }
+
+    p {
+        width: 95%;
+    }
+}

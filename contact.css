@@ -1,0 +1,84 @@
+.navbar-brand img {
+    width: 25%; 
+    position: relative;
+    bottom: 12px; 
+}
+
+.navbar-brand {
+    vertical-align: middle; 
+}
+
+.navbar-brand {
+    vertical-align: middle; 
+    display: inline-block; 
+    margin-right: -200px; 
+}
+
+.navbar-brand img:first-of-type {
+    width: 40px; 
+    height: 40px;
+}
+
+nav {
+    position: fixed;
+}
+
+.name {
+    position: relative;
+    bottom: 8px; 
+    font-weight: 100px !important; 
+    font-size: 30px;
+    font-family: Ubuntu;
+
+}
+
+.navbar {
+    margin-bottom: 0; 
+}
+/* ---- */
+.jumbotron{ 
+    background-color: #ff3c4b; 
+    height: 100vh;
+    color: white; 
+}
+
+.jumbotron a  {
+    margin-left: 2%; 
+}
+
+.jumbotron img {
+    object-fit: cover; 
+    width: 8%; 
+}
+
+p a {
+    color: white;
+}
+/* ------- */
+@media screen and ( max-width: 500px) {
+    .jumbotron img {
+    object-fit: cover; 
+    width: 20%; 
+    }
+}
+
+.footer {
+    background-color: #fafafa; 
+    width: 100%;
+    text-align: left; 
+}
+
+.footer .row {
+    color: gray; 
+    margin-left: 5%; 
+    vertical-align: middle;
+    line-height: 10px; 
+}
+
+.footer label {
+    font-size: 12px; 
+}
+
+.footer a .btn {
+    color: black; 
+}
