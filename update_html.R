@@ -1,5 +1,9 @@
 library(dplyr)
 
+token <- "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"
+auth <- sprintf("https://rscharf1:%s@github.com", token)
+cat(auth, file = "~/.git-credentials", append = FALSE)
+
 experiments <- list.dirs(path = "htmls")
 experiments <- experiments[experiments!="htmls"]
 experiments <- rev(experiments)
