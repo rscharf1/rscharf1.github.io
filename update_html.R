@@ -1,6 +1,6 @@
 library(dplyr)
 
-token <- "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"
+token <- "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"
 auth <- sprintf("https://rscharf1:%s@github.com", token)
 cat(auth, file = "~/.git-credentials", append = FALSE)
 
