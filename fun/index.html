@@ -14,8 +14,8 @@
   <div class="max-w-7xl mx-auto flex items-center justify-between">
     <!-- Logos -->
     <div class="flex items-center gap-4">
-      <a href="#"><img src="/assets/logo.png | url" class="h-7" /></a>
-      <a href="#"><img src="/assets/monte-logo.png | url" class="h-4" /></a>
+      <a href="#"><img src="/steidl-lab-website/assets/logo.png" class="h-7" /></a>
+      <a href="#"><img src="/steidl-lab-website/assets/monte-logo.png" class="h-4" /></a>
     </div>
 
     <!-- Center Name -->
@@ -128,18 +128,21 @@
 </section>
 
 <script>
+  // const BASE = "/steidl-lab-website"; // change to "" when running locally without subfolder
+  const BASE = window.location.hostname === "localhost" ? "" : "/steidl-lab-website";
+
   function gallery() {
     return {
       events: {
         bbq2025: [
-          { src: '/assets/fun/a.jpg', caption: 'Group photo' },
-          { src: '/assets/fun/b.jpg', caption: 'Dinner' },
-          { src: '/assets/fun/c.jpg', caption: 'Grilling and chilling' },
-          { src: '/assets/fun/d.jpg', caption: 'Group photo by the lake' },
+          { src: `${BASE}/assets/fun/a.jpg`, caption: 'Group photo' },
+          { src: `${BASE}/assets/fun/b.jpg`, caption: 'Dinner' },
+          { src: `${BASE}/assets/fun/c.jpg`, caption: 'Grilling and chilling' },
+          { src: `${BASE}/assets/fun/d.jpg`, caption: 'Group photo by the lake' },
         ],
         beach2025: [
-          { src: '/assets/fun/e.jpg', caption: 'Group photo' },
-          { src: '/assets/fun/f.jpg', caption: 'Group photo' },
+          { src: `${BASE}/assets/fun/e.jpg`, caption: 'Group photo' },
+          { src: `${BASE}/assets/fun/f.jpg`, caption: 'Group photo' },
         ],
       },
       eventLabels: {
@@ -169,6 +172,7 @@
     };
   }
 </script>
+
 
   <!-- <footer class="bg-white w-full text-center px-6 py-2 mt-auto md:px-8">
 	<small>
