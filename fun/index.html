@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steidl Lab Website</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body class="min-h-screen flex flex-col">
+  <script src="https://unpkg.com/alpinejs" defer></script>
+
+<header x-data="{ open: false }" class="w-full bg-white px-6 py-4 md:px-8 border-b border-gray-200">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- Logos -->
+    <div class="flex items-center gap-4">
+      <a href="#"><img src="/assets/logo.png" class="h-7" /></a>
+      <a href="#"><img src="/assets/monte-logo.png" class="h-4" /></a>
+    </div>
+
+    <!-- Center Name -->
+    <span class="text-xl md:text-2xl font-bold text-blue-900 tracking-tight">
+      Steidl Lab
+    </span>
+
+    <!-- Burger icon -->
+    <button @click="open = !open" class="md:hidden text-2xl" aria-label="Toggle menu">
+      ☰
+    </button>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:block">
+      <ul class="flex gap-6 font-semibold text-sm">
+        <li><a href="/" class="">Home</a></li>
+        <li><a href="/people" class="">People</a></li>
+        <li><a href="/research">Research</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li><a href="/fun">Fun in the Lab</a></li>
+        <li><a href="/join">Join us</a></li>
+        <li><a href="/about" class="">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Mobile nav -->
+  <div x-show="open" class="md:hidden px-4 pt-4 pb-2">
+    <ul class="space-y-3 text-sm font-medium">
+        <li><a href="/" class="">Home</a></li>
+        <li><a href="/people" class="">People</a></li>
+        <li><a href="/research">Research</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li><a href="/fun">Fun in the Lab</a></li>
+        <li><a href="/join">Join us</a></li>
+        <li><a href="/about" class="">About</a></li>
+    </ul>
+  </div>
+</header>
+
+  
+<script src="https://unpkg.com/alpinejs" defer></script>
+
+<section class="bg-white py-16 px-6 md:px-12" x-data="gallery()">
+  <div class="max-w-6xl mx-auto">
+
+    <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Fun in the Lab</h2>
+
+    <!-- Event Block -->
+    <div class="mb-10">
+      <h3 class="text-2xl font-semibold text-gray-800 mb-4">Summer Barbecue 2025</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4">
+        <template x-for="(img, index) in events['bbq2025']" :key="img.src">
+          <img 
+            :src="img.src" 
+            @click="open(index, 'bbq2025')" 
+            class="cursor-pointer rounded-lg shadow-md hover:scale-105 transition" 
+            :alt="img.caption"
+          />
+        </template>
+      </div>
+    </div>
+
+    <!-- Event Block -->
+    <div class="mb-10">
+      <h3 class="text-2xl font-semibold text-gray-800 mb-4">Beach Day 2025</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4">
+        <template x-for="(img, index) in events['beach2025']" :key="img.src">
+          <img 
+            :src="img.src" 
+            @click="open(index, 'beach2025')" 
+            class="cursor-pointer rounded-lg shadow-md hover:scale-105 transition" 
+            :alt="img.caption"
+          />
+        </template>
+      </div>
+    </div>
+
+
+    <!-- Add more event sections here, e.g., events['holiday2024'] -->
+
+  <!-- Lightbox Overlay -->
+  <div x-show="active" x-transition class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center px-4" x-cloak>
+    <!-- Close Button -->
+    <button @click="active = false" class="absolute top-4 right-4 text-white text-3xl font-bold">&times;</button>
+
+    <div class="max-w-4xl w-full text-center space-y-4">
+      <!-- Event Title -->
+      <h4 class="text-white text-lg font-semibold" x-text="eventLabels[currentEvent]"></h4>
+
+      <!-- Image -->
+      <img :src="events[currentEvent][currentIndex].src" 
+           :alt="events[currentEvent][currentIndex].caption"
+           class="w-full max-h-[80vh] object-contain rounded-lg mx-auto" />
+
+      <!-- Caption -->
+      <p class="text-white text-sm italic" x-text="events[currentEvent][currentIndex].caption"></p>
+
+      <!-- Navigation -->
+      <div class="flex justify-between text-white text-lg mt-2">
+        <button @click="prev" class="hover:underline">&larr; Prev</button>
+        <button @click="next" class="hover:underline">Next &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  </div>
+</section>
+
+<script>
+  function gallery() {
+    return {
+      events: {
+        bbq2025: [
+          { src: '/assets/fun/a.jpg', caption: 'Group photo' },
+          { src: '/assets/fun/b.jpg', caption: 'Dinner' },
+          { src: '/assets/fun/c.jpg', caption: 'Grilling and chilling' },
+          { src: '/assets/fun/d.jpg', caption: 'Group photo by the lake' },
+        ],
+        beach2025: [
+          { src: '/assets/fun/e.jpg', caption: 'Group photo' },
+          { src: '/assets/fun/f.jpg', caption: 'Group photo' },
+        ],
+      },
+      eventLabels: {
+        bbq2025: "Summer Barbecue 2025",
+        beach2025: "Beach Day 2025"
+      },
+
+      active: false,
+      currentEvent: '',
+      currentIndex: 0,
+
+      open(index, eventKey) {
+        this.currentIndex = index;
+        this.currentEvent = eventKey;
+        this.active = true;
+      },
+
+      next() {
+        const images = this.events[this.currentEvent];
+        this.currentIndex = (this.currentIndex + 1) % images.length;
+      },
+
+      prev() {
+        const images = this.events[this.currentEvent];
+        this.currentIndex = (this.currentIndex - 1 + images.length) % images.length;
+      }
+    };
+  }
+</script>
+
+  <!-- <footer class="bg-white w-full text-center px-6 py-2 mt-auto md:px-8">
+	<small>
+		Copyrights &copy 2025 | All rights reserved
+	</small>
+	
+</footer> -->
+
+<footer class="bg-slate-900 text-slate-300 w-full px-6 py-8 text-sm md:px-12">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- Address -->
+    <div>
+      <h2 class="text-base font-semibold underline text-slate-100 mb-2">
+        Department of Cell Biology
+      </h2>
+      <address class="not-italic leading-relaxed">
+        Albert Einstein College of Medicine<br />
+        Room 601–605, Chanin Building<br />
+        1300 Morris Park Ave, Bronx<br />
+        New York 10461<br />
+        USA<br />
+        Contact: <a href="tel:7184302205" class="underline">718-430-2205</a>
+      </address>
+    </div>
+
+    <!-- Affiliations -->
+    <div>
+      <h2 class="text-base font-semibold underline text-slate-100 mb-2">
+        Additional affiliations
+      </h2>
+      <ul class="space-y-1 leading-relaxed">
+        <li>Montefiore–Einstein Comprehensive Cancer Center</li>
+        <li>Blood Cancer Institute</li>
+        <li>Department of Oncology</li>
+        <li>Department of Medicine</li>
+        <li>The Ruth L. and David S. Gottesman Institute for Stem Cell and Regenerative Medicine Research</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom row -->
+  <div class="mt-8 text-center text-xs text-slate-400">
+    &copy; 2025 Steidl Lab | All rights reserved
+  </div>
+</footer>
+
+</body>
+</html>

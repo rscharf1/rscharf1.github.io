@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steidl Lab Website</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body class="min-h-screen flex flex-col">
+  <script src="https://unpkg.com/alpinejs" defer></script>
+
+<header x-data="{ open: false }" class="w-full bg-white px-6 py-4 md:px-8 border-b border-gray-200">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- Logos -->
+    <div class="flex items-center gap-4">
+      <a href="#"><img src="/assets/logo.png" class="h-7" /></a>
+      <a href="#"><img src="/assets/monte-logo.png" class="h-4" /></a>
+    </div>
+
+    <!-- Center Name -->
+    <span class="text-xl md:text-2xl font-bold text-blue-900 tracking-tight">
+      Steidl Lab
+    </span>
+
+    <!-- Burger icon -->
+    <button @click="open = !open" class="md:hidden text-2xl" aria-label="Toggle menu">
+      ☰
+    </button>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:block">
+      <ul class="flex gap-6 font-semibold text-sm">
+        <li><a href="/" class="">Home</a></li>
+        <li><a href="/people" class="">People</a></li>
+        <li><a href="/research">Research</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li><a href="/fun">Fun in the Lab</a></li>
+        <li><a href="/join">Join us</a></li>
+        <li><a href="/about" class="">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Mobile nav -->
+  <div x-show="open" class="md:hidden px-4 pt-4 pb-2">
+    <ul class="space-y-3 text-sm font-medium">
+        <li><a href="/" class="">Home</a></li>
+        <li><a href="/people" class="">People</a></li>
+        <li><a href="/research">Research</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li><a href="/fun">Fun in the Lab</a></li>
+        <li><a href="/join">Join us</a></li>
+        <li><a href="/about" class="">About</a></li>
+    </ul>
+  </div>
+</header>
+
+  
+<section class="bg-white py-20 px-6 md:px-12">
+  <div class="max-w-3xl mx-auto text-center">
+    
+    <h1 class="text-4xl font-bold text-gray-900 mb-8">Join Us</h1>
+
+    <p class="text-lg text-gray-800 leading-relaxed mb-6">
+      We are always looking for highly motivated, ambitious, and collaborative new lab members with
+      interest and expertise in cell and molecular biology, flow cytometry, and work with mouse genetic models.
+    </p>
+
+    <p class="text-lg text-gray-800 leading-relaxed mb-6">
+      Please send your cover letter and CV to 
+      <a href="mailto:gina.vessecchia@einsteinmed.edu" class="text-purple-700 underline hover:text-purple-900">
+        Gina Vessecchia
+      </a>
+      (<a href="mailto:gina.vessecchia@einsteinmed.edu" class="text-blue-700 hover:underline">gina.vessecchia@einsteinmed.edu</a>) regarding pre-, post-doctoral, and other research opportunities in the Steidl Laboratory.
+    </p>
+
+    <p class="text-lg text-gray-800 leading-relaxed">
+      Please feel free to contact us for any potential collaborations.
+    </p>
+
+  </div>
+</section>
+
+  <!-- <footer class="bg-white w-full text-center px-6 py-2 mt-auto md:px-8">
+	<small>
+		Copyrights &copy 2025 | All rights reserved
+	</small>
+	
+</footer> -->
+
+<footer class="bg-slate-900 text-slate-300 w-full px-6 py-8 text-sm md:px-12">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- Address -->
+    <div>
+      <h2 class="text-base font-semibold underline text-slate-100 mb-2">
+        Department of Cell Biology
+      </h2>
+      <address class="not-italic leading-relaxed">
+        Albert Einstein College of Medicine<br />
+        Room 601–605, Chanin Building<br />
+        1300 Morris Park Ave, Bronx<br />
+        New York 10461<br />
+        USA<br />
+        Contact: <a href="tel:7184302205" class="underline">718-430-2205</a>
+      </address>
+    </div>
+
+    <!-- Affiliations -->
+    <div>
+      <h2 class="text-base font-semibold underline text-slate-100 mb-2">
+        Additional affiliations
+      </h2>
+      <ul class="space-y-1 leading-relaxed">
+        <li>Montefiore–Einstein Comprehensive Cancer Center</li>
+        <li>Blood Cancer Institute</li>
+        <li>Department of Oncology</li>
+        <li>Department of Medicine</li>
+        <li>The Ruth L. and David S. Gottesman Institute for Stem Cell and Regenerative Medicine Research</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom row -->
+  <div class="mt-8 text-center text-xs text-slate-400">
+    &copy; 2025 Steidl Lab | All rights reserved
+  </div>
+</footer>
+
+</body>
+</html>
