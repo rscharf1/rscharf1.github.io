@@ -1,14 +1,3 @@
-{# {% macro person(name, position) %}
-
-<div class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-  <img src="/assets/rusty.png" alt="Member name" class="w-32 h-32 rounded-full object-cover mb-4" />
-  <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ name }}</h3>
-  <p class="text-sm text-gray-600 mb-4">{{ position }}</p>
-  <a href="#" class="text-sm font-medium text-purple-700 hover:underline">Read more →</a>
-</div>
-
-{% endmacro %} #}
-
 {% macro person(name, position, image, bio) %}
 <div x-data="{ open: false }" class="relative">
   <!-- Card -->
@@ -38,7 +27,7 @@
 
     <!-- Right: Image -->
     <div class="w-full md:w-1/3">
-      <img src="/assets/rusty.png" alt="{{ name }}" class="rounded-lg w-full h-auto object-cover" />
+      <img src="{{ image }}" alt="{{ name }}" class="rounded-lg w-full h-auto object-cover" />
     </div>
   </div>
 </div>
