@@ -1,4 +1,4 @@
-name: Build and Deploy Eleventy Site
+name: Build and Deploy Eleventy to GitHub Pages
 
 on:
   push:
@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout source
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -20,11 +20,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build site with Eleventy
+      - name: Build site
         run: npx eleventy
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
+          publish_branch: gh-pages
+
