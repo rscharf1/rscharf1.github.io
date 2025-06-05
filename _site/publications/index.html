@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steidl Lab Website</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body class="min-h-screen flex flex-col">
+  <script src="https://unpkg.com/alpinejs" defer></script>
+
+<header x-data="{ open: false }" class="w-full bg-white px-6 py-4 md:px-8 border-b border-gray-200">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- Logos -->
+    <div class="flex items-center gap-4">
+      <a href="#"><img src="/assets/logo.png" class="h-7" /></a>
+      <a href="#"><img src="/assets/monte-logo.png" class="h-4" /></a>
+    </div>
+
+    <!-- Center Name -->
+    <span class="text-xl md:text-2xl font-bold text-blue-900 tracking-tight">
+      Steidl Lab
+    </span>
+
+    <!-- Burger icon -->
+    <button @click="open = !open" class="md:hidden text-2xl" aria-label="Toggle menu">
+      ☰
+    </button>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:block">
+      <ul class="flex gap-6 font-semibold text-sm">
+        <li><a href="/" class="">Home</a></li>
+        <li><a href="/people" class="">People</a></li>
+        <li><a href="/research">Research</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li><a href="/fun">Fun in the Lab</a></li>
+        <li><a href="/join">Join us</a></li>
+        <li><a href="/about" class="">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Mobile nav -->
+  <div x-show="open" class="md:hidden px-4 pt-4 pb-2">
+    <ul class="space-y-3 text-sm font-medium">
+        <li><a href="/" class="">Home</a></li>
+        <li><a href="/people" class="">People</a></li>
+        <li><a href="/research">Research</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li><a href="/fun">Fun in the Lab</a></li>
+        <li><a href="/join">Join us</a></li>
+        <li><a href="/about" class="">About</a></li>
+    </ul>
+  </div>
+</header>
+
+  
+<section class="bg-white py-16 px-6 md:px-12">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Publications</h2>
+
+    <div class="space-y-10">
+      
+
+      
+
+<div class="border-b border-gray-200 pb-6">
+  <h3 class="text-xl font-bold text-red-700 leading-snug">
+    Pharmacological restriction of genomic binding sites redirects PU.1 pioneer transcription factor activity
+  </h3>
+
+  <p class="text-gray-700 italic mt-2">
+    Taylor SJ, Stauber J, Bohorquez O, Tatsumi G, Kumari R, Chakraborty J, Bartholdy BA, Schwenger E, Sundaravel S, Farahat AA, Wheat JC, Goldfinger M, Verma A, Kumar A, Boykin DW, Stengel KR, Poon GMK, Steidl U
+  </p>
+
+  <p class="text-sm text-gray-600 mt-2 italic">
+    <span class="font-semibold">Nature Genetics</span>, 2024 Sept 18
+  </p>
+
+  <!-- Links -->
+  <div class="mt-4 flex gap-4 text-sm">
+    <a href="https://pubmed.ncbi.nlm.nih.gov/39294495/" target="_blank" class="text-blue-600 hover:underline">
+      View on PubMed →
+    </a>
+    <a href="/assets/nature_genetics_18_sept_2024.pdf" download class="text-purple-700 hover:underline">
+      Download PDF ↓
+    </a>
+  </div>
+</div>
+
+
+
+      
+
+<div class="border-b border-gray-200 pb-6">
+  <h3 class="text-xl font-bold text-red-700 leading-snug">
+    Regulation of the hematopoietic stem cell pool by C-Kit-associated trogocytosis
+  </h3>
+
+  <p class="text-gray-700 italic mt-2">
+    Gao X*, Carpenter RS*, Boulais PE*, Zhang D, Marlein CR, Li H, Smith M, Chung DJ, Maryanovich M, Will B, Steidl U, Frenette PS
+  </p>
+
+  <p class="text-sm text-gray-600 mt-2 italic">
+    <span class="font-semibold">Science</span>, 2024 Aug 9
+  </p>
+
+  <!-- Links -->
+  <div class="mt-4 flex gap-4 text-sm">
+    <a href="https://pubmed.ncbi.nlm.nih.gov/39116219/" target="_blank" class="text-blue-600 hover:underline">
+      View on PubMed →
+    </a>
+    <a href="/assets/science_9_aug_2024.pdf" download class="text-purple-700 hover:underline">
+      Download PDF ↓
+    </a>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</section>
+  <!-- <footer class="bg-white w-full text-center px-6 py-2 mt-auto md:px-8">
+	<small>
+		Copyrights &copy 2025 | All rights reserved
+	</small>
+	
+</footer> -->
+
+<footer class="bg-slate-900 text-slate-300 w-full px-6 py-8 text-sm md:px-12">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- Address -->
+    <div>
+      <h2 class="text-base font-semibold underline text-slate-100 mb-2">
+        Department of Cell Biology
+      </h2>
+      <address class="not-italic leading-relaxed">
+        Albert Einstein College of Medicine<br />
+        Room 601–605, Chanin Building<br />
+        1300 Morris Park Ave, Bronx<br />
+        New York 10461<br />
+        USA<br />
+        Contact: <a href="tel:7184302205" class="underline">718-430-2205</a>
+      </address>
+    </div>
+
+    <!-- Affiliations -->
+    <div>
+      <h2 class="text-base font-semibold underline text-slate-100 mb-2">
+        Additional affiliations
+      </h2>
+      <ul class="space-y-1 leading-relaxed">
+        <li>Montefiore–Einstein Comprehensive Cancer Center</li>
+        <li>Blood Cancer Institute</li>
+        <li>Department of Oncology</li>
+        <li>Department of Medicine</li>
+        <li>The Ruth L. and David S. Gottesman Institute for Stem Cell and Regenerative Medicine Research</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom row -->
+  <div class="mt-8 text-center text-xs text-slate-400">
+    &copy; 2025 Steidl Lab | All rights reserved
+  </div>
+</footer>
+
+</body>
+</html>

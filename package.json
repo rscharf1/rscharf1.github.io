@@ -1,0 +1,33 @@
+{
+  "name": "rscharf.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "eleventy && tailwindcss -i ./tailwind.css -o ./_site/css/styles.css --minify",
+    "deploy": "gh-pages -d _site",
+    "dev": "concurrently \"npx @tailwindcss/cli -i tailwind.css -o ./_site/css/styles.css --watch\" \"npx eleventy --serve\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rscharf1/rscharf.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rscharf1/rscharf.github.io/issues"
+  },
+  "homepage": "https://github.com/rscharf1/rscharf.github.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "github:11ty/eleventy",
+    "concurrently": "^9.1.2",
+    "gh-pages": "^6.3.0"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.8",
+    "tailwindcss": "^4.1.8"
+  }
+}

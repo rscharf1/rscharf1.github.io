@@ -1,0 +1,47 @@
+<script src="https://unpkg.com/alpinejs" defer></script>
+
+<header x-data="{ open: false }" class="w-full bg-white px-6 py-4 md:px-8 border-b border-gray-200">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- Logos -->
+    <div class="flex items-center gap-4">
+      <a href="#"><img src="/assets/logo.png" class="h-7" /></a>
+      <a href="#"><img src="/assets/monte-logo.png" class="h-4" /></a>
+    </div>
+
+    <!-- Center Name -->
+    <span class="text-xl md:text-2xl font-bold text-blue-900 tracking-tight">
+      Steidl Lab
+    </span>
+
+    <!-- Burger icon -->
+    <button @click="open = !open" class="md:hidden text-2xl" aria-label="Toggle menu">
+      ☰
+    </button>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:block">
+      <ul class="flex gap-6 font-semibold text-sm">
+        <li><a href="/" class="{{ 'text-purple-700' if url === 'home' }}">Home</a></li>
+        <li><a href="/people" class="{{ 'text-purple-700' if url === 'people' }}">People</a></li>
+        <li><a href="/research">Research</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li><a href="/fun">Fun in the Lab</a></li>
+        <li><a href="/join">Join us</a></li>
+        <li><a href="/about" class="{{ 'text-purple-700' if url === 'about' }}">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Mobile nav -->
+  <div x-show="open" class="md:hidden px-4 pt-4 pb-2">
+    <ul class="space-y-3 text-sm font-medium">
+        <li><a href="/" class="{{ 'text-purple-700' if url === 'home' }}">Home</a></li>
+        <li><a href="/people" class="{{ 'text-purple-700' if url === 'people' }}">People</a></li>
+        <li><a href="/research">Research</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li><a href="/fun">Fun in the Lab</a></li>
+        <li><a href="/join">Join us</a></li>
+        <li><a href="/about" class="{{ 'text-purple-700' if url === 'about' }}">About</a></li>
+    </ul>
+  </div>
+</header>

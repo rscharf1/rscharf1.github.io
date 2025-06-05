@@ -1,0 +1,112 @@
+<script src="https://unpkg.com/alpinejs" defer></script>
+
+<section class="bg-white py-16 px-6 md:px-12" x-data="gallery()">
+  <div class="max-w-6xl mx-auto">
+
+    <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Fun in the Lab</h2>
+
+    <!-- Event Block -->
+    <div class="mb-10">
+      <h3 class="text-2xl font-semibold text-gray-800 mb-4">Summer Barbecue 2025</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4">
+        <template x-for="(img, index) in events['bbq2025']" :key="img.src">
+          <img 
+            :src="img.src" 
+            @click="open(index, 'bbq2025')" 
+            class="cursor-pointer rounded-lg shadow-md hover:scale-105 transition" 
+            :alt="img.caption"
+          />
+        </template>
+      </div>
+    </div>
+
+    <!-- Event Block -->
+    <div class="mb-10">
+      <h3 class="text-2xl font-semibold text-gray-800 mb-4">Beach Day 2025</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-4">
+        <template x-for="(img, index) in events['beach2025']" :key="img.src">
+          <img 
+            :src="img.src" 
+            @click="open(index, 'beach2025')" 
+            class="cursor-pointer rounded-lg shadow-md hover:scale-105 transition" 
+            :alt="img.caption"
+          />
+        </template>
+      </div>
+    </div>
+
+
+    <!-- Add more event sections here, e.g., events['holiday2024'] -->
+
+  <!-- Lightbox Overlay -->
+  <div x-show="active" x-transition class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center px-4" x-cloak>
+    <!-- Close Button -->
+    <button @click="active = false" class="absolute top-4 right-4 text-white text-3xl font-bold">&times;</button>
+
+    <div class="max-w-4xl w-full text-center space-y-4">
+      <!-- Event Title -->
+      <h4 class="text-white text-lg font-semibold" x-text="eventLabels[currentEvent]"></h4>
+
+      <!-- Image -->
+      <img :src="events[currentEvent][currentIndex].src" 
+           :alt="events[currentEvent][currentIndex].caption"
+           class="w-full max-h-[80vh] object-contain rounded-lg mx-auto" />
+
+      <!-- Caption -->
+      <p class="text-white text-sm italic" x-text="events[currentEvent][currentIndex].caption"></p>
+
+      <!-- Navigation -->
+      <div class="flex justify-between text-white text-lg mt-2">
+        <button @click="prev" class="hover:underline">&larr; Prev</button>
+        <button @click="next" class="hover:underline">Next &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  </div>
+</section>
+
+<script>
+  function gallery() {
+    return {
+      events: {
+        bbq2025: [
+          { src: '/assets/fun/a.jpg', caption: 'Group photo' },
+          { src: '/assets/fun/b.jpg', caption: 'Dinner' },
+          { src: '/assets/fun/c.jpg', caption: 'Grilling and chilling' },
+          { src: '/assets/fun/d.jpg', caption: 'Group photo by the lake' },
+        ],
+        beach2025: [
+          { src: '/assets/fun/e.jpg', caption: 'Group photo' },
+          { src: '/assets/fun/f.jpg', caption: 'Group photo' },
+        ],
+      },
+      eventLabels: {
+        bbq2025: "Summer Barbecue 2025",
+        beach2025: "Beach Day 2025"
+      },
+
+      active: false,
+      currentEvent: '',
+      currentIndex: 0,
+
+      open(index, eventKey) {
+        this.currentIndex = index;
+        this.currentEvent = eventKey;
+        this.active = true;
+      },
+
+      next() {
+        const images = this.events[this.currentEvent];
+        this.currentIndex = (this.currentIndex + 1) % images.length;
+      },
+
+      prev() {
+        const images = this.events[this.currentEvent];
+        this.currentIndex = (this.currentIndex - 1 + images.length) % images.length;
+      }
+    };
+  }
+</script>

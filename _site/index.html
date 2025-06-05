@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steidl Lab Website</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body class="min-h-screen flex flex-col">
+  <script src="https://unpkg.com/alpinejs" defer></script>
+
+<header x-data="{ open: false }" class="w-full bg-white px-6 py-4 md:px-8 border-b border-gray-200">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <!-- Logos -->
+    <div class="flex items-center gap-4">
+      <a href="#"><img src="/assets/logo.png" class="h-7" /></a>
+      <a href="#"><img src="/assets/monte-logo.png" class="h-4" /></a>
+    </div>
+
+    <!-- Center Name -->
+    <span class="text-xl md:text-2xl font-bold text-blue-900 tracking-tight">
+      Steidl Lab
+    </span>
+
+    <!-- Burger icon -->
+    <button @click="open = !open" class="md:hidden text-2xl" aria-label="Toggle menu">
+      ☰
+    </button>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:block">
+      <ul class="flex gap-6 font-semibold text-sm">
+        <li><a href="/" class="text-purple-700">Home</a></li>
+        <li><a href="/people" class="">People</a></li>
+        <li><a href="/research">Research</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li><a href="/fun">Fun in the Lab</a></li>
+        <li><a href="/join">Join us</a></li>
+        <li><a href="/about" class="">About</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Mobile nav -->
+  <div x-show="open" class="md:hidden px-4 pt-4 pb-2">
+    <ul class="space-y-3 text-sm font-medium">
+        <li><a href="/" class="text-purple-700">Home</a></li>
+        <li><a href="/people" class="">People</a></li>
+        <li><a href="/research">Research</a></li>
+        <li><a href="/publications">Publications</a></li>
+        <li><a href="/fun">Fun in the Lab</a></li>
+        <li><a href="/join">Join us</a></li>
+        <li><a href="/about" class="">About</a></li>
+    </ul>
+  </div>
+</header>
+
+  
+<section class="bg-gradient-to-br from-cyan-400 to-purple-500 py-20 px-6 md:px-12">
+  <div class="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+    <!-- Image -->
+    <div class="flex justify-center">
+      <img src="/assets/smfish.jpg" alt="smFISH imaging" class="max-h-[30rem] rounded-lg shadow-xl ring-1 ring-white/20" />
+    </div>
+    
+    <!-- Text -->
+    <div>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-white leading-snug">
+        Our goal is to understand and target molecular mechanisms in healthy, pre-cancerous, and leukemic stem cell
+      </h1>
+
+      <p class="mt-5 text-white/90 text-base md:text-lg leading-relaxed max-w-xl">
+        We use advanced molecular and imaging techniques to investigate how stem cells evolve from healthy to malignant states. We are working to uncover critical mechanisms driving blood cancers and identify new therapeutic targets.
+      </p>
+    </div>
+    
+  </div>
+</section>
+
+<section class="px-8 pt-16"> 
+   <h2 class="text-center text-4xl font-bold">Active areas of investigation</h2>
+
+
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-12">
+      
+      
+
+<div class="p-6 bg-white border border-gray-100 rounded-lg shadow-sm">
+   <div class="w-12 h-1.5 bg-cyan-300"></div>
+   <h3 class="font-semibold text-xl mt-2.5">Leukemia Pathogenesis</h3>
+   <p class="mt-4 text-gray-600">We are focusing on understanding leukemia pathogenesis at the (pre-leukemic) stem cell level</p>
+</div>
+
+
+      
+
+<div class="p-6 bg-white border border-gray-100 rounded-lg shadow-lg">
+   <div class="w-12 h-1.5 bg-pink-300"></div>
+   <h3 class="font-semibold text-xl mt-2.5">Glycotyping Cells</h3>
+   <p class="mt-4 text-gray-600">Investigating the role of and leveraging the sugar code on the cell&#39;s surface</p>
+</div>
+
+
+      
+
+<div class="p-6 bg-white border border-gray-100 rounded-lg shadow-sm">
+   <div class="w-12 h-1.5 bg-purple-300"></div>
+   <h3 class="font-semibold text-xl mt-2.5">Stem Cell Pathways</h3>
+   <p class="mt-4 text-gray-600">Identification of novel molecular mechanisms and pathways governing stem cell subclonal heterogeneity, dynamics, and competition</p>
+</div>
+
+
+   </div>
+
+</section>
+<section class="py-16 px-8">
+   <div class="mx-auto max-w-5xl">
+      <h2 class="text-4xl font-bold">Some more details</h2>
+      <div class="flex flex-col items-center justify-between gap-16 md:flex-row">
+         <p class="mt-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel qui vitae nobis expedita enim quos eveniet
+            placeat quibusdam fugit, dolorem blanditiis recusandae accusantium quia maiores voluptate cupiditate magnam
+            unde. Quam!
+         </p>
+         <a
+            href="#"
+            class="flex-shrink-0 rounded-full bg-gradient-to-br from-cyan-500 to-purple-500 py-2 px-8 font-semibold text-white"
+            >Contact us</a
+         >
+      </div>
+   </div>
+</section>
+  <!-- <footer class="bg-white w-full text-center px-6 py-2 mt-auto md:px-8">
+	<small>
+		Copyrights &copy 2025 | All rights reserved
+	</small>
+	
+</footer> -->
+
+<footer class="bg-slate-900 text-slate-300 w-full px-6 py-8 text-sm md:px-12">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- Address -->
+    <div>
+      <h2 class="text-base font-semibold underline text-slate-100 mb-2">
+        Department of Cell Biology
+      </h2>
+      <address class="not-italic leading-relaxed">
+        Albert Einstein College of Medicine<br />
+        Room 601–605, Chanin Building<br />
+        1300 Morris Park Ave, Bronx<br />
+        New York 10461<br />
+        USA<br />
+        Contact: <a href="tel:7184302205" class="underline">718-430-2205</a>
+      </address>
+    </div>
+
+    <!-- Affiliations -->
+    <div>
+      <h2 class="text-base font-semibold underline text-slate-100 mb-2">
+        Additional affiliations
+      </h2>
+      <ul class="space-y-1 leading-relaxed">
+        <li>Montefiore–Einstein Comprehensive Cancer Center</li>
+        <li>Blood Cancer Institute</li>
+        <li>Department of Oncology</li>
+        <li>Department of Medicine</li>
+        <li>The Ruth L. and David S. Gottesman Institute for Stem Cell and Regenerative Medicine Research</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom row -->
+  <div class="mt-8 text-center text-xs text-slate-400">
+    &copy; 2025 Steidl Lab | All rights reserved
+  </div>
+</footer>
+
+</body>
+</html>

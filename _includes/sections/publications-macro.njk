@@ -1,0 +1,27 @@
+{% macro pub(title, authors, journal, date, pubmed, pdf) %}
+
+<div class="border-b border-gray-200 pb-6">
+  <h3 class="text-xl font-bold text-red-700 leading-snug">
+    {{ title }}
+  </h3>
+
+  <p class="text-gray-700 italic mt-2">
+    {{ authors }}
+  </p>
+
+  <p class="text-sm text-gray-600 mt-2 italic">
+    <span class="font-semibold">{{ journal }}</span>, {{ date }}
+  </p>
+
+  <!-- Links -->
+  <div class="mt-4 flex gap-4 text-sm">
+    <a href="{{ pubmed }}" target="_blank" class="text-blue-600 hover:underline">
+      View on PubMed →
+    </a>
+    <a href="{{ pdf }}" download class="text-purple-700 hover:underline">
+      Download PDF ↓
+    </a>
+  </div>
+</div>
+
+{% endmacro %}

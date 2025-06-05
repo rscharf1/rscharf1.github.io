@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eleventy and Tailwind CSS</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body class="min-h-screen flex flex-col">
+  <header class="w-full bg-white flex justify-between items-center px-6 py-4 md:px-8">
+
+   <div class="flex items-center gap-4">
+      <a href="#">
+         <img src="/assets/logo.png" alt="Logo" class="h-7" />
+      </a>
+      <a href="#">
+         <img src="/assets/monte-logo.png" alt="Logo" class="h-4" />
+      </a>
+      
+   </div>
+
+   <span class="text-2xl font-bold text-blue-900 tracking-tight">Steidl Lab</span>
+
+
+   <nav>
+      <ul class="flex gap-10 font-semibold text-sm">
+         <li>
+            <a href="/" class="">Home</a>
+         </li>
+         <li>
+            <a href="/people" class="text-purple-700">People</a>
+         </li>
+         <li>Projects</li>
+         <li>Publications</li>
+         <li>Fun in the Lab</li>
+         <li>Join us</li>
+         <li>
+            <a href="/about" class="">About</a>
+         </li>
+         
+      </ul>
+   </nav>
+</header>
+  
+<section class="py-16 px-8 bg-purple-50">
+   <div class="mx-auto max-w-5xl">
+      <h2 class="text-4xl font-bold">About us</h2>
+      <p class="mt-4">
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel qui vitae nobis expedita enim quos eveniet placeat
+         quibusdam fugit, dolorem blanditiis recusandae accusantium quia maiores voluptate cupiditate magnam unde. Quam!
+      </p>
+   </div>
+</section>
+  <!-- <footer class="bg-white w-full text-center px-6 py-2 mt-auto md:px-8">
+	<small>
+		Copyrights &copy 2025 | All rights reserved
+	</small>
+	
+</footer> -->
+
+<footer class="bg-slate-900 text-slate-300 w-full px-6 py-8 text-sm md:px-12">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- Address -->
+    <div>
+      <h2 class="text-base font-semibold underline text-slate-100 mb-2">
+        Department of Cell Biology
+      </h2>
+      <address class="not-italic leading-relaxed">
+        Albert Einstein College of Medicine<br />
+        Room 601–605, Chanin Building<br />
+        1300 Morris Park Ave, Bronx<br />
+        New York 10461<br />
+        USA<br />
+        Contact: <a href="tel:7184302205" class="underline">718-430-2205</a>
+      </address>
+    </div>
+
+    <!-- Affiliations -->
+    <div>
+      <h2 class="text-base font-semibold underline text-slate-100 mb-2">
+        Additional affiliations
+      </h2>
+      <ul class="space-y-1 leading-relaxed">
+        <li>Montefiore–Einstein Comprehensive Cancer Center</li>
+        <li>Blood Cancer Institute</li>
+        <li>Department of Oncology</li>
+        <li>Department of Medicine</li>
+        <li>The Ruth L. and David S. Gottesman Institute for Stem Cell and Regenerative Medicine Research</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom row -->
+  <div class="mt-8 text-center text-xs text-slate-400">
+    &copy; 2025 Steidl Lab | All rights reserved
+  </div>
+</footer>
+
+</body>
+</html>
