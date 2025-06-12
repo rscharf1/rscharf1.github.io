@@ -1,0 +1,26 @@
+{% macro newsmac(headline, pub_date, image, url) %}
+<a href="{{ url }}" target="_blank" class="block hover:shadow-lg transition-shadow duration-200 rounded-lg overflow-hidden">
+  <div class="bg-white shadow-md flex flex-col h-[28rem]">  {# lock total height #}
+
+    <!-- Image section -->
+    <div class="h-48 w-full overflow-hidden">
+      <img src="{{ image }}" alt="{{ headline }}" class="w-full h-full object-cover" />
+    </div>
+
+    <!-- Text section -->
+    <div class="flex flex-col justify-between px-5 py-4 flex-1 text-center">
+      <div>
+        <p class="text-base font-medium text-gray-800 leading-relaxed mb-4">
+          {{ headline }}
+        </p>
+      </div>
+      <div>
+        <p class="text-sm text-gray-500">
+          Published: {{ pub_date }}
+        </p>
+      </div>
+    </div>
+
+  </div>
+</a>
+{% endmacro %}

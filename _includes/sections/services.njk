@@ -1,15 +1,20 @@
-<section class="px-8 pt-16"> 
+<section class="px-8 py-8 pt-16"> 
    <h2 class="text-center text-4xl font-bold">Active areas of investigation</h2>
-{#    <p class="mx-auto mt-4 max-w-3xl text-center">
-      Velit perspiciatis error est quam expedita aperiam assumenda eveniet, iste voluptatibus suscipit eligendi odit
-      consequatur architecto dolor!
-   </p> #}
-
    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-12">
-      {% import 'sections/service-macro.njk' as macro %}
-      {{ macro.service('shadow-sm', 'bg-cyan-300', "Leukemia Pathogenesis", "We are focusing on understanding leukemia pathogenesis at the (pre-leukemic) stem cell level")}}
-      {{ macro.service('shadow-lg', 'bg-pink-300', "Glycotyping Cells", "Investigating the role of and leveraging the sugar code on the cell's surface")}}
-      {{ macro.service('shadow-sm', 'bg-purple-300', "Stem Cell Pathways", "Identification of novel molecular mechanisms and pathways governing stem cell subclonal heterogeneity, dynamics, and competition")}}
-   </div>
 
+      {% import 'sections/service-macro.njk' as macro %}
+
+      {{ macro.service('shadow-sm', 'bg-cyan-300', "Leukemia Pathogenesis", "We are focusing on understanding leukemia pathogenesis at the (pre-leukemic) stem cell level")}}
+
+      {{ macro.service('shadow-lg', 'bg-pink-300', "Glycotyping Cells", "Investigating the role of and leveraging the sugar code on the cell's surface")}}
+
+      {{ macro.service('shadow-sm', 'bg-purple-300', "Stem Cell Pathways", "Identification of novel molecular mechanisms and pathways governing stem cell subclonal heterogeneity, dynamics, and competition")}}
+
+   </div>
+   <div class="py-4 flex justify-center">
+         <a href="{{ '/research' | url }} "
+            class="flex-shrink-0 rounded-full bg-gradient-to-br from-cyan-500 to-purple-500 py-2 px-8 font-semibold text-white">
+            Learn More
+         </a>
+   </div>
 </section>

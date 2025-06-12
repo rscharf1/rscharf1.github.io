@@ -21,13 +21,14 @@
     <!-- Desktop nav -->
     <nav class="hidden md:block">
       <ul class="flex gap-6 font-semibold text-sm">
-        <li><a href="{{ '/' | url }}" class="{{ 'text-purple-700' if url === 'home' }}">Home</a></li>
-        <li><a href="{{ '/people' | url }}" class="{{ 'text-purple-700' if url === 'people' }}">People</a></li>
-        <li><a href="{{ '/research' | url }}">Research</a></li>
-        <li><a href="{{ '/publications' | url }}">Publications</a></li>
-        <li><a href="{{ '/fun' | url }}">Fun in the Lab</a></li>
-        <li><a href="{{ '/join' | url }}">Join us</a></li>
-        <li><a href="{{ '/about' | url }}" class="{{ 'text-purple-700' if url === 'about' }}">About</a></li>
+        <li><a href="{{ '/' | url }} " class="{{ 'text-purple-700' if url === 'home' }}">Home</a></li>
+        <li><a href="{{ '/people' | url }} " class="{{ 'text-purple-700' if url === 'people' }}">People</a></li>
+        <li><a href="{{ '/research' | url }} " class="{{ 'text-purple-700' if url === 'research' }}">Research</a></li>
+        <li><a href="{{ '/publications' | url }} " class="{{ 'text-purple-700' if url === 'publications' }}">Publications</a></li>
+        <li><a href="{{ '/fun' | url }} " class="{{ 'text-purple-700' if url === 'fun' }}">Fun in the Lab</a></li>
+        <li><a href="{{ '/join' | url }} " class="{{ 'text-purple-700' if url === 'join' }}">Join us</a></li>
+        <li><a href="{{ '/about' | url }} " class="{{ 'text-purple-700' if url === 'about' }}">About</a></li>
+        <li><a href="{{ '/news' | url }} " class="{{ 'text-purple-700' if url === 'news' }}">News</a></li>
       </ul>
     </nav>
   </div>
@@ -35,13 +36,14 @@
   <!-- Mobile nav -->
   <div x-show="open" class="md:hidden px-4 pt-4 pb-2">
     <ul class="space-y-3 text-sm font-medium">
-        <li><a href="{{ '/' | url }}" class="{{ 'text-purple-700' if url === 'home' }}">Home</a></li>
-        <li><a href="{{ '/people' | url }}" class="{{ 'text-purple-700' if url === 'people' }}">People</a></li>
-        <li><a href="{{ '/research' | url }}">Research</a></li>
-        <li><a href="{{ '/publications' | url }}">Publications</a></li>
-        <li><a href="{{ '/fun' | url }}">Fun in the Lab</a></li>
-        <li><a href="{{ '/join' | url }}">Join us</a></li>
-        <li><a href="{{ '/about' | url }}" class="{{ 'text-purple-700' if url === 'about' }}">About</a></li>
+        <li><a href="{{ '/' | url }} " class="{{ 'text-purple-700' if url === 'home' }}">Home</a></li>
+        <li><a href="{{ '/people' | url }} " class="{{ 'text-purple-700' if url === 'people' }}">People</a></li>
+        <li><a href="{{ '/research' | url }} " class="{{ 'text-purple-700' if url === 'research' }}">Research</a></li>
+        <li><a href="{{ '/publications' | url }} " class="{{ 'text-purple-700' if url === 'publications' }}">Publications</a></li>
+        <li><a href="{{ '/fun' | url }} " class="{{ 'text-purple-700' if url === 'fun' }}">Fun in the Lab</a></li>
+        <li><a href="{{ '/join' | url }} " class="{{ 'text-purple-700' if url === 'join' }}">Join us</a></li>
+        <li><a href="{{ '/about' | url }} " class="{{ 'text-purple-700' if url === 'about' }}">About</a></li>
+        <li><a href="{{ '/news' | url }} " class="{{ 'text-purple-700' if url === 'news' }}">News</a></li>
     </ul>
   </div>
 </header>
